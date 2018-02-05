@@ -1,0 +1,10 @@
+{% extends("index.html") %}{% import "bootstrap/wtf.html" as wtf %}{% block content %}
+
+<form action="/send-messages" method="POST">
+
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.telegram_user)}}
+
+    <button type="submit" class="btn btn-primary">Select User</button>
+</form>
+
+{% endblock %}

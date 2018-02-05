@@ -1,0 +1,10 @@
+{% extends("index.html") %}{% import "bootstrap/wtf.html" as wtf %}{% block content %}
+<p>A message from Telegram has been sent to your mobile phone or your logged in device. Please enter the verification code here.</p>
+<form action="/send-to-group" method="POST">
+
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.composed_message)}} {{ wtf.form_field(form.group_link)}}
+
+    <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
+{% endblock %}

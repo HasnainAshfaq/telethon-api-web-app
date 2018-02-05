@@ -1,0 +1,16 @@
+{% extends("index.html") %} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
+<h5>Add a new user in Database</h5>
+<p><span style="font-weight: 500;">Step 01:</span> Go <a href="https://my.telegram.org/">here</a> and login using user's phone number.</p>
+<p><span style="font-weight: 500;">Step 02:</span> Under API development tools, Create new application window will appear. Fill in your application details. There is no need to enter any URL, and only the first two fields (App title and Short name) can currently
+    be changed later.</p>
+<p><span style="font-weight: 500;">Step 03:</span> Click on Create application at the end. Remember that your API hash is secret and Telegram won’t let you revoke it. Don’t post it anywhere!</p>
+<p><span style="font-weight: 500;">Step 04:</span> Enter the API key and API ID</p>
+<div class="spaced-div"></div>
+
+<form action="/add-new-user" method="POST">
+
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.api_id) }} {{ wtf.form_field(form.api_hash) }} {{ wtf.form_field(form.phone_number) }} {{ wtf.form_field(form.u_name) }}
+
+    <button type="submit" class="btn btn-primary">Add User to Database</button>
+</form>
+{% endblock %}

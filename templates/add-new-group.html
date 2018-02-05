@@ -1,0 +1,10 @@
+{% extends("index.html") %}{% import "bootstrap/wtf.html" as wtf %}{% block content %}
+<p>Your group invite link can be taken from the group in Telegram. Paste exact URL here.</p>
+<form action="/add-new-group" method="POST">
+
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.new_group)}} {{ wtf.form_field(form.group_name)}}
+
+    <button type="submit" class="btn btn-primary">Insert Group</button>
+</form>
+
+{% endblock %}

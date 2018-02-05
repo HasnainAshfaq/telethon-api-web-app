@@ -1,0 +1,8 @@
+{% extends("layout.html") %} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
+<form action="/login" method="POST">
+
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.username) }} {{ wtf.form_field(form.password) }} {{ wtf.form_field(form.remember) }}
+
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+{% endblock %}
